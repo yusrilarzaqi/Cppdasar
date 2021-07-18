@@ -13,12 +13,15 @@ int main(){
 
 
     //character
-    char a = 'b';
+    // char a = 'b';
+    
+    // boolean
+    bool a = true;
 
    cout << a << endl;
    cout << sizeof(a) << "byte" << endl;
-   cout << numeric_limits<char>::max() << endl;
-   cout << numeric_limits<char>::min() << endl;
+   cout << numeric_limits<bool>::max() << endl;
+   cout << numeric_limits<bool>::min() << endl;
    cin.get();
    return 0;
   
