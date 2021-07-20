@@ -1,2 +1,2 @@
-# Dasar_cpp
-Tutorial cpp kelas terbuka
+# Dasar_c++
+Tutorial c++ kelas terbuka
