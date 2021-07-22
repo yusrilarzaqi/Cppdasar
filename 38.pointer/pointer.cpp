@@ -4,8 +4,7 @@ int main(){
     int a = 5;
     
     // pointer 
-    int *aPtr = nullptr;
-    aPtr = &a;
+    int *aPtr = &a;
 
     cout << "nilai a : " << a << endl;
     cout << "alamat a : " << &a << endl;
