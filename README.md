@@ -2,6 +2,6 @@
 Tutorial c++ kelas terbuka
 
 # Bio
-Nama  : Yusril A
-Kelas : \n
-No    : \n
+- Nama  : Yusril A
+- Kelas : 
+- No    : 
