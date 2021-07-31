@@ -1,23 +1,19 @@
 #include <iostream>
 using namespace std;
 
-void tampilan(double p, double l,char a){
+void tampilan(double p, double l){
     cout << "Tampilan menggunakan void\n";
-    if(a == 'l'){
-        cout << "Luasnya : ";
-        cout << p * l << endl;
-    }
-    else if(a == 'k'){
-        cout << "Kelilingnya : ";
-        cout<< 2 * (p + l) << endl;
-    }
+    cout << "Luasnya : ";
+    cout << p * l << " cm" << endl << endl;
+    
+    cout << "kelilingnya : ";
+    cout << 2*(p+l) << " cm" << endl;
 }
 
 int main(){
     double P,L;
     cout << "Palnjang : "; cin >> P;
     cout << "Lebar : "; cin >> L;
-    tampilan(P,L,'l');
-    tampilan(P, L, 'k');
+    tampilan(P,L);
     return 0;
 }
