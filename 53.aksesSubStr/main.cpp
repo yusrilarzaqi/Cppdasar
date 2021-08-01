@@ -4,7 +4,7 @@ using namespace std;
 
 int main(){
     
-    string kalimat1("hari ini makan apel dan pir");
+    string kalimat1("hari ini makan apel dan pir anajy");
     string kalimat2("belajar basic cpp");
     
     cout << kalimat1 << endl;
@@ -18,7 +18,10 @@ int main(){
 
     int a;
     a = kalimat1.find("an");
+    cout << endl;
     cout << a << endl;
+    cout << kalimat1.find("an", a + 1) << endl;
+    cout << kalimat1.rfind("an") << endl;
 
     return 0;
 }
