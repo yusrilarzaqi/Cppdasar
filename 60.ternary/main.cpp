@@ -2,13 +2,13 @@
 using namespace std;
 
 int main(){
-    int a,b;
+    int x,y;
     string output;
     
-    cout << ">> "; cin >> a;
-    cout << ">> "; cin >> b;
+    cout << ">> "; cin >> x;
+    cout << ">> "; cin >> y;
 
-    output = (a<b) ? "Yes" : "No";
+    output = (x<y) ? "Yes" : "No";
     
     /*if(a<b){
         output = "Yes";
