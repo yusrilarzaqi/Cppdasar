@@ -1,0 +1,10 @@
+ini adalah baris pertama
+ini baris kedua
+
+daftar
+no  nama
+1   Yusril
+2   Adam
+3   Bimo
+4   Dimas
+5   Bukhori
