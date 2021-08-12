@@ -20,15 +20,17 @@ int main(){
     mahasiswa1.NIM = 1243;
     mahasiswa1.jurusan = "TKJ";
 
-    mahasiswa1.nama = "Adam Saputra";
-    mahasiswa1.NIM = 1244;
-    mahasiswa1.jurusan = "RPL";
+    mahasiswa2.nama = "Adam Saputra";
+    mahasiswa2.NIM = 1244;
+    mahasiswa2.jurusan = "RPL";
 
-    mahasiswa1.nama = "Bimo Alamsyah";
-    mahasiswa1.NIM = 1245;
-    mahasiswa1.jurusan = "TKJ";
+    mahasiswa3.nama = "Bimo Alamsyah";
+    mahasiswa3.NIM = 1245;
+    mahasiswa3.jurusan = "TKJ";
     
-
+    myFile.write(reinterpret_cast<char*>(&mahasiswa1), sizeof(Mahasiswa)); 
+    myFile.write(reinterpret_cast<char*>(&mahasiswa2), sizeof(Mahasiswa));
+    myFile.write(reinterpret_cast<char*>(&mahasiswa3), sizeof(Mahasiswa));
 
     myFile.close();
     return 0;
