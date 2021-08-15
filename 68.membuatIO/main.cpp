@@ -10,8 +10,16 @@ struct Mahasiswa{
     string jurusan;
 };
 
+Mahasiswa ambilData(int &posisi, fstream &myFile){
+    Mahasiswa bufferData;
+    myFile.seekp((posisi -1)* sizeof(Mahasiswa));
+    myFile.read(reinterpret_cast<char*>(&bufferData), sizeof(Mahasiswa));
+    return bufferData;
+}
+
 int main(){
     fstream myFile;
+    int posisi=1;
     myFile.open("data.bin", ios::trunc | ios::out | ios::in | ios::binary);
 
     Mahasiswa mahasiswa1, mahasiswa2, mahasiswa3;
@@ -31,7 +39,14 @@ int main(){
     myFile.write(reinterpret_cast<char*>(&mahasiswa1), sizeof(Mahasiswa)); 
     myFile.write(reinterpret_cast<char*>(&mahasiswa2), sizeof(Mahasiswa));
     myFile.write(reinterpret_cast<char*>(&mahasiswa3), sizeof(Mahasiswa));
-
+    
+    Mahasiswa output;
+    output = ambilData(posisi, myFile);
+    
+    cout << output.NIM << endl;
+    cout << output.nama << endl;
+    cout << output.jurusan << endl;
+    
     myFile.close();
     return 0;
 }
