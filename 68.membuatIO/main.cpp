@@ -10,16 +10,25 @@ struct Mahasiswa{
     string jurusan;
 };
 
-Mahasiswa ambilData(int &posisi, fstream &myFile){
+Mahasiswa ambilData(int posisi, fstream &myFile){
     Mahasiswa bufferData;
     myFile.seekp((posisi -1)* sizeof(Mahasiswa));
     myFile.read(reinterpret_cast<char*>(&bufferData), sizeof(Mahasiswa));
     return bufferData;
 }
 
+void menulisData(Mahasiswa &data, fstream &myFile){
+    myFile.write(reinterpret_cast<char*>(&data), sizeof(Mahasiswa));
+}
+
+void menulisDataPos(int posisi, Mahasiswa &bufferData, fstream &myFile ){
+    myFile.seekg((posisi -1)* sizeof(Mahasiswa));
+    myFile.write(reinterpret_cast<char*>(&bufferData), sizeof(Mahasiswa));
+}
+
 int main(){
     fstream myFile;
-    int posisi=1;
+
     myFile.open("data.bin", ios::trunc | ios::out | ios::in | ios::binary);
 
     Mahasiswa mahasiswa1, mahasiswa2, mahasiswa3;
@@ -36,13 +45,17 @@ int main(){
     mahasiswa3.NIM = 1245;
     mahasiswa3.jurusan = "TKJ";
     
-    myFile.write(reinterpret_cast<char*>(&mahasiswa1), sizeof(Mahasiswa)); 
-    myFile.write(reinterpret_cast<char*>(&mahasiswa2), sizeof(Mahasiswa));
-    myFile.write(reinterpret_cast<char*>(&mahasiswa3), sizeof(Mahasiswa));
+    menulisData(mahasiswa1, myFile);
+    menulisData(mahasiswa2, myFile);
+    menulisData(mahasiswa3, myFile);
     
+    // mahasiswa1.nama = "bahri";
+    menulisDataPos(1, mahasiswa1, myFile);
+
     Mahasiswa output;
-    output = ambilData(posisi, myFile);
+    output = ambilData(1, myFile);
     
+
     cout << output.NIM << endl;
     cout << output.nama << endl;
     cout << output.jurusan << endl;
