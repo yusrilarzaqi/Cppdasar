@@ -7,7 +7,7 @@ void print(int x){
 
 int main(){
     int a,b,c;
-    a=(b=5, print(b), c=20, print(c), b*c);
+    a=(cin >> b, print(b), cin >> c, print(c), b*c);
     print(a);
     return 0;
 }

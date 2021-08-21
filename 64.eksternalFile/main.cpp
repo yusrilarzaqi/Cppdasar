@@ -6,9 +6,9 @@ int main(){
     
     ofstream myFile;
 
-    // ios::out = default operasi output
-    // ios::app = menambahkan diakhir baris
-    /* ios::trunc = membuat file jika tidak ada 
+    /* ios::out = default operasi output
+     * ios::app = menambahkan diakhir baris append
+     * ios::trunc = membuat file jika tidak ada 
      * dan jika ada akan menghapus ganti yang baru
      * (over write)*/
 

@@ -24,14 +24,13 @@ int main(){
     test.b[4] = 'i';
     test.b[5] = 'l';
 
-
+    
     // tampil
     cout << "test.a : " << test.a << endl;
     cout << "test.b : " << test.b << endl << endl;
     
     /* jika char b dirubah maka nilai a juga berubah secara
      * auto */
-
     test.a = 102829;
     // tampil
     cout << "test.a : " << test.a << endl;

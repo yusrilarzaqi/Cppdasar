@@ -41,13 +41,13 @@ int main(){
 
     // tampil
     system("clear");
-    cout << "Judul : " << film1.judul << endl
-         << "tahun : " << film1.tahun_pembuatan << endl
-         << "genre : " << film1.genre << endl
-         << "actor : - " << film1.pemeran1.nama << endl
-         << "           - " << film1.pemeran1.tahun_lahir << endl
-         << "        - " << film1.pemeran2.nama << endl
-         << "           - " << film1.pemeran2.tahun_lahir << endl;
+    cout << "Judul : " << film1.judul << endl;
+    cout << "tahun : " << film1.tahun_pembuatan << endl;
+    cout << "genre : " << film1.genre << endl;
+    cout << "actor : - " << film1.pemeran1.nama << endl;
+    cout << "           - " << film1.pemeran1.tahun_lahir << endl;
+    cout << "        - " << film1.pemeran2.nama << endl;
+    cout << "           - " << film1.pemeran2.tahun_lahir << endl;
     
 
     return 0;

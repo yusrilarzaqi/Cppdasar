@@ -8,7 +8,7 @@ using namespace std;
  * */
 union data{
     int a;
-    char b[6];
+    double b;
 };
 
 int main(){
@@ -17,13 +17,7 @@ int main(){
     data test;
 
     // assignment
-    test.b[0] = 'y';
-    test.b[1] = 'u';
-    test.b[2] = 's';
-    test.b[3] = 'r';
-    test.b[4] = 'i';
-    test.b[5] = 'l';
-
+    test.a = 102829;
 
     // tampil
     cout << "test.a : " << test.a << endl;
@@ -31,8 +25,8 @@ int main(){
     
     /* jika char b dirubah maka nilai a juga berubah secara
      * auto */
+    test.b = 23.1;
 
-    test.a = 102829;
     // tampil
     cout << "test.a : " << test.a << endl;
     cout << "test.b : " << test.b << endl;
