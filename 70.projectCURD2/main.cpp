@@ -17,18 +17,29 @@ void checkData(fstream &data);
 // func write data
 void writeData(fstream &data, int posisi, Mahasiswa &input){
     data.seekp((posisi-1)* sizeof(Mahasiswa), ios::beg);
-    data.write(reinterpret_cast<char*>(&input), sizeof(Mahasiswa));
+    data.write(
+            reinterpret_cast<char*>(&input),
+            sizeof(Mahasiswa)
+    );
 }
 
-void readData(fstream &data, int posisi, Mahasiswa &input){
-    data.seekg();
-    data.read();
+int getDataSize(fstream &data){
+    int start, end;
+    data.seekg(0, ios::beg);
+    start = data.tellg();
+    data.seekg(0, ios::beg);
+    end = data.tellg();
+    return (end-start)/sizeof(Mahasiswa);
 }
 
 // func menambahkan data mhs
 void addMahasiswa(fstream &data){
     Mahasiswa input;
     input.pk = 1;
+ 
+    int size = getDataSize(data);
+    cout << "data mahasiswa : " << size << endl; 
+
     cout << "Nama : ";
     getline(cin, input.nama);
     cout << "NIM : ";
@@ -36,14 +47,14 @@ void addMahasiswa(fstream &data){
     cout << "Jurusan : ";
     getline(cin, input.jurusan);
 
-    writeData(data, 1, input);
+    writeData(data,size+1, input);
 }
 
 // fungsi main
 int main(){
 
     fstream data;
-    
+
     checkData(data);
 
     // deklarasi variable
