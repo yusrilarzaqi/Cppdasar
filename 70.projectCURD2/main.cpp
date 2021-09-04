@@ -43,9 +43,7 @@ void addMahasiswa(fstream &data){
 int main(){
 
     fstream data;
-    
     checkData(data);
-
     // deklarasi variable
     // mengambil retuen getOption kedalam inputUser
     int inputUser = getOption();
