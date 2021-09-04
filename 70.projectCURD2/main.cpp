@@ -15,40 +15,15 @@ int getOption();
 // func check data base
 void checkData(fstream &data);
 // func write data
-void writeData(fstream &data, int posisi, Mahasiswa &input){
-    data.seekp((posisi-1)* sizeof(Mahasiswa), ios::beg);
-    data.write(
-            reinterpret_cast<char*>(&input),
-            sizeof(Mahasiswa)
-    );
-}
-
-int getDataSize(fstream &data){
-    int start, end;
-    data.seekg(0, ios::beg);
-    start = data.tellg();
-    data.seekg(0, ios::beg);
-    end = data.tellg();
-    return (end-start)/sizeof(Mahasiswa);
-}
-
+void writeData(fstream &data, int posisi, Mahasiswa &input);
+// func mengambil size data
+int getDataSize(fstream &data);
+// func membaca yg ada didalam data.bin
+Mahasiswa readData(fstream &data, int posisi);
 // func menambahkan data mhs
-void addMahasiswa(fstream &data){
-    Mahasiswa input;
-    input.pk = 1;
- 
-    int size = getDataSize(data);
-    cout << "data mahasiswa : " << size << endl; 
+void addMahasiswa(fstream &data);
 
-    cout << "Nama : ";
-    getline(cin, input.nama);
-    cout << "NIM : ";
-    getline(cin, input.NIM);
-    cout << "Jurusan : ";
-    getline(cin, input.jurusan);
-
-    writeData(data,size+1, input);
-}
+void displayDataMahasiswa(fstream &data);
 
 // fungsi main
 int main(){
@@ -77,6 +52,7 @@ int main(){
                 break;
             case READ:
                 cout << "Menampilkan data mahasiswa" << endl;
+                displayDataMahasiswa(data);
                 break;
             case UPDATE:
                 cout << "Menrubah data mahasiswa" << endl;
@@ -123,7 +99,7 @@ int getOption(){
     // deklarasi variable
     int input;
 
-    // system("clear");
+    system("clear");
     cout << "PROGRAM CURD  " << endl;
     cout << "--------------  " << endl;
     cout << "(1)add mahasiswa" << endl;
@@ -152,4 +128,67 @@ void checkData(fstream &data){
                 ios::out | ios::binary | ios::trunc
         );
     }
+}
+void writeData(fstream &data, int posisi, Mahasiswa &input){
+    data.seekp((posisi-1)*sizeof(Mahasiswa), ios::beg);
+    data.write(
+            reinterpret_cast<char*>(&input),
+            sizeof(Mahasiswa)
+    );
+
+}
+int getDataSize(fstream &data){
+    int start, end;
+    data.seekg(0, ios::beg);
+    start = data.tellg();
+    data.seekg(0, ios::end);
+    end = data.tellg();
+    return (end-start)/sizeof(Mahasiswa);
+}
+Mahasiswa readData(fstream &data, int posisi){
+    Mahasiswa readMahasiswa;
+    data.seekg((posisi-1)*sizeof(Mahasiswa), ios::beg);
+    data.read(
+            reinterpret_cast<char*>(&readMahasiswa),
+            sizeof(Mahasiswa)
+    );
+    return readMahasiswa;
+}
+void addMahasiswa(fstream &data){
+    Mahasiswa input, last;
+    input.pk = 1;
+ 
+    int size = getDataSize(data);
+    cout << "data mahasiswa : " << size << endl; 
+    
+    if (size==0){
+        input.pk = 1;
+    }else {
+        last = readData(data, size);
+        cout << "pk : " << last.pk << endl;
+        input.pk = last.pk + 1;
+    }
+    cout << "Nama : ";
+    getline(cin, input.nama);
+    cout << "NIM : ";
+    getline(cin, input.NIM);
+    cout << "Jurusan : ";
+    getline(cin, input.jurusan);
+
+    writeData(data,size+1, input);
+
+}
+void displayDataMahasiswa(fstream &data){
+    int size = getDataSize(data);
+    Mahasiswa show;
+    cout << "No.\tpk.\tNIM.\tNama.\tJurusan" << endl;
+    for(int i = 1; i <= size; i++){
+        show = readData(data, i);
+        cout << i << "\t";
+        cout << show.pk << "\t";
+        cout << show.NIM << "\t";
+        cout << show.nama << "\t";
+        cout << show.jurusan << endl;
+    }
+
 }
