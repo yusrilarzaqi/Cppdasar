@@ -29,10 +29,6 @@ void displayDataMahasiswa(fstream &data);
 int main(){
 
     fstream data;
-<<<<<<< HEAD
-=======
-
->>>>>>> 36cdb909818bed201a6d0f51690bc409ee656386
     checkData(data);
     // deklarasi variable
     // mengambil retuen getOption kedalam inputUser
