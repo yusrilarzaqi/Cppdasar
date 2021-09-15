@@ -1,5 +1,5 @@
 # Dasar_c++
-Tutorial c++ kelas terbuka
+- Tutorial c++ kelas terbuka
 
 # Bio
 - Nama  : Yusril A
