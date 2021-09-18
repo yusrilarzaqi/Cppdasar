@@ -18,7 +18,7 @@ int main(){
     cout << "max : " << MAX(5,3) << endl;
     cout << "kuatdrat : " << KUADRAT(5) << endl;
 
-    #undef Bahasa
+    #undef BAHASA
 
     #define BAHASA "Inggris"
     cout << "bahasa : " << BAHASA << endl;
