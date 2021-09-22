@@ -25,25 +25,42 @@ Mahasiswa readData(fstream &data, int posisi);
 void addMahasiswa(fstream &data);
 // fungsi menampilkan data mahasiswa
 void displayDataMahasiswa(fstream &data);
-
 // fungsi mengupdate data 
-void updateRecord(fstream &data){
-    int nomor;
-    Mahasiswa updateMhs;
+void updateRecord(fstream &data);
 
-    cout << "pilih no : " ;cin >> nomor;
-    // cin.ignore(numeric_limits<streamsize>::max(),'\n');
+// fungai menghapus data
+void delateRecord(fstream &data){
+    int nomor, size, offset;
+    Mahasiswa blankMhs, tempMhs;
+    fstream dataSementara;
 
-    updateMhs = readData(data, nomor);
-    cout << "\n\nPilihan data" << endl;
-    cout << "NIM : " << updateMhs.NIM << endl;
-    cout << "nama: " << updateMhs.nama<< endl;
-    cout << "jurusan: " << updateMhs.jurusan<< endl;
+    size = getDataSize(data);
+    // 1.pilih nomor yg akan dihapus
+    cout << "Hapus no : ";cin >> nomor;
+    // 2.dinomor tsb akan diisi data kosong
+    dataSementara.open("temp.dat", ios::trunc|ios::in|ios::out|ios::binary);
+    // 3.kitacek ada atau tidak didata.bin, jika ada akan 
+    //  dipindahkan ke file sementara
+    offset = 1;
+    for (int i=1;i<=size; i++){
+        tempMhs = readData(data, i);
 
-    cout << "\n Merubah data" << endl;
-    cout << "NIM : ";getline(cin, updateMhs.NIM);
-    cout << "nama: ";getline(cin, updateMhs.nama);
-    cout << "jurusan : ";getline(cin, updateMhs.jurusan);
+        if(!tempMhs.nama.empty()){
+            writeData(data, i-offset, tempMhs);
+        }else{
+            offset++;
+        }
+    }
+    // 4.pindahkan data dari file sementara ke data.bin
+    size = getDataSize(dataSementara);
+    data.close();
+    data.open("data.bin", ios::trunc|ios::in|ios::out|ios::binary);
+    data.close();
+    data.open("data.bin", ios::in|ios::out|ios::binary);
+    for (int i=1; i<=size;i++){
+        tempMhs = readData(dataSementara, i);
+        writeData(data,i, tempMhs);
+    } 
 }
 
 // fungsi main
@@ -81,26 +98,29 @@ int main(){
                 break;
             case DELATE:
                 cout << "Menghapus data mahasiswa" << endl;
+                displayDataMahasiswa(data);
+                delateRecord(data);
+                displayDataMahasiswa(data);
                 break;
 
-            // jika  inputUser menginputkan selain diatas maka 
+                // jika  inputUser menginputkan selain diatas maka 
             default:
                 // tampilkan lalu break
                 cout << "command not found" << endl;
                 break;
         }
-        
+
         // membuat titik poin untuk continue
-        label_continue:
-        
+label_continue:
+
         // lalu ulangi atau tidak
         cout << "continue [y/n] : "; cin >> is_continue;
-        
+
         // jika y maka  kembali menampilkan tamplate
         if((is_continue == 'y') | (is_continue == 'y')){
             inputUser = getOption();
         }
-        
+
         // jika n maka break loop ini
         else if((is_continue == 'n') | (is_continue == 'N')){
             break;
@@ -214,3 +234,25 @@ void displayDataMahasiswa(fstream &data){
     }
 
 }
+void updateRecord(fstream &data){
+    int nomor;
+    Mahasiswa updateMhs;
+
+    cout << "pilih no : " ;cin >> nomor;
+    cin.ignore(numeric_limits<streamsize>::max(),'\n');
+
+    updateMhs = readData(data, nomor);
+    cout << "\n\nPilihan data" << endl;
+    cout << "NIM : " << updateMhs.NIM << endl;
+    cout << "nama: " << updateMhs.nama<< endl;
+    cout << "jurusan: " << updateMhs.jurusan<< endl;
+
+    cout << "\nMerubah data" << endl;
+    cout << "NIM : ";getline(cin, updateMhs.NIM);
+    cout << "nama: ";getline(cin, updateMhs.nama);
+    cout << "jurusan : ";getline(cin, updateMhs.jurusan);
+
+    writeData(data, nomor, updateMhs);
+}
+
+
