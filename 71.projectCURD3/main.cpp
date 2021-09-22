@@ -23,8 +23,28 @@ int getDataSize(fstream &data);
 Mahasiswa readData(fstream &data, int posisi);
 // func menambahkan data mhs
 void addMahasiswa(fstream &data);
-
+// fungsi menampilkan data mahasiswa
 void displayDataMahasiswa(fstream &data);
+
+// fungsi mengupdate data 
+void updateRecord(fstream &data){
+    int nomor;
+    Mahasiswa updateMhs;
+
+    cout << "pilih no : " ;cin >> nomor;
+    // cin.ignore(numeric_limits<streamsize>::max(),'\n');
+
+    updateMhs = readData(data, nomor);
+    cout << "\n\nPilihan data" << endl;
+    cout << "NIM : " << updateMhs.NIM << endl;
+    cout << "nama: " << updateMhs.nama<< endl;
+    cout << "jurusan: " << updateMhs.jurusan<< endl;
+
+    cout << "\n Merubah data" << endl;
+    cout << "NIM : ";getline(cin, updateMhs.NIM);
+    cout << "nama: ";getline(cin, updateMhs.nama);
+    cout << "jurusan : ";getline(cin, updateMhs.jurusan);
+}
 
 // fungsi main
 int main(){
@@ -55,6 +75,9 @@ int main(){
                 break;
             case UPDATE:
                 cout << "Menrubah data mahasiswa" << endl;
+                displayDataMahasiswa(data);
+                updateRecord(data);
+                displayDataMahasiswa(data);
                 break;
             case DELATE:
                 cout << "Menghapus data mahasiswa" << endl;
