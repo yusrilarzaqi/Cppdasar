@@ -1,8 +1,8 @@
 #include <iostream>
 
-#define ID
+#define ID 0
 
-#if IP == 0
+#if ID == 0
     #define LANG "Indonesia"
 #else
     #define LANG "English"

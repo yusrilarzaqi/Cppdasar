@@ -1,4 +1,4 @@
-// #include <iostream>
+#include <iostream>
 #include "bersama.h"
 #include "foo.h"
 #include "bar.h"
