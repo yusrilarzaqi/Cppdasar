@@ -3,5 +3,5 @@
 
 # Bio
 - Nama  : Yusril A
-- Kelas : 
-- No    : 185512
+- Kelas : Tehnik Komputer
+- Uinv  : Stekom
