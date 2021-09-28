@@ -3,7 +3,7 @@
 
 # Bio
 - Nama  : Yusril A
-- Kelas : Tehnik Komputer
+- Prodi: Tehnik Komputer
 - Uinv  : Stekom
 
 # After this
