@@ -18,7 +18,6 @@ int main(){
         }
         cin >> nilai[i];
     }
-
     for(int i=0; i <= nilai.size(); i++){
       if(i == 0){
             cout << "0-9     : ";
@@ -32,7 +31,5 @@ int main(){
         }
       cout << endl;
     }
-
-
     return 0;
 }
