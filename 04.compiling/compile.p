@@ -83,21 +83,21 @@ namespace std { inline namespace __ndk1 { } }
 # 43 "/data/data/com.termux/files/usr/include/c++/v1/stddef.h" 3
 
 
-# 1 "/data/data/com.termux/files/usr/lib/clang/12.0.0/include/stddef.h" 1 3
-# 35 "/data/data/com.termux/files/usr/lib/clang/12.0.0/include/stddef.h" 3
+# 1 "/data/data/com.termux/files/usr/lib/clang/12.0.1/include/stddef.h" 1 3
+# 35 "/data/data/com.termux/files/usr/lib/clang/12.0.1/include/stddef.h" 3
 typedef long int ptrdiff_t;
-# 46 "/data/data/com.termux/files/usr/lib/clang/12.0.0/include/stddef.h" 3
+# 46 "/data/data/com.termux/files/usr/lib/clang/12.0.1/include/stddef.h" 3
 typedef long unsigned int size_t;
-# 102 "/data/data/com.termux/files/usr/lib/clang/12.0.0/include/stddef.h" 3
-# 1 "/data/data/com.termux/files/usr/lib/clang/12.0.0/include/__stddef_max_align_t.h" 1 3
-# 19 "/data/data/com.termux/files/usr/lib/clang/12.0.0/include/__stddef_max_align_t.h" 3
+# 102 "/data/data/com.termux/files/usr/lib/clang/12.0.1/include/stddef.h" 3
+# 1 "/data/data/com.termux/files/usr/lib/clang/12.0.1/include/__stddef_max_align_t.h" 1 3
+# 19 "/data/data/com.termux/files/usr/lib/clang/12.0.1/include/__stddef_max_align_t.h" 3
 typedef struct {
   long long __clang_max_align_nonce1
       __attribute__((__aligned__(__alignof__(long long))));
   long double __clang_max_align_nonce2
       __attribute__((__aligned__(__alignof__(long double))));
 } max_align_t;
-# 103 "/data/data/com.termux/files/usr/lib/clang/12.0.0/include/stddef.h" 2 3
+# 103 "/data/data/com.termux/files/usr/lib/clang/12.0.1/include/stddef.h" 2 3
 # 46 "/data/data/com.termux/files/usr/include/c++/v1/stddef.h" 2 3
 
 
@@ -118,8 +118,8 @@ using std::nullptr_t;
 # 1 "/data/data/com.termux/files/usr/include/c++/v1/stdint.h" 1 3 4
 # 110 "/data/data/com.termux/files/usr/include/c++/v1/stdint.h" 3
 # 123 "/data/data/com.termux/files/usr/include/c++/v1/stdint.h" 3
-# 1 "/data/data/com.termux/files/usr/lib/clang/12.0.0/include/stdint.h" 1 3
-# 52 "/data/data/com.termux/files/usr/lib/clang/12.0.0/include/stdint.h" 3
+# 1 "/data/data/com.termux/files/usr/lib/clang/12.0.1/include/stdint.h" 1 3
+# 52 "/data/data/com.termux/files/usr/lib/clang/12.0.1/include/stdint.h" 3
 # 1 "/data/data/com.termux/files/usr/include/stdint.h" 1 3 4
 # 32 "/data/data/com.termux/files/usr/include/stdint.h" 3 4
 # 1 "/data/data/com.termux/files/usr/include/bits/wchar_limits.h" 1 3 4
@@ -197,7 +197,7 @@ typedef uint64_t uint_fast32_t;
 
 typedef uint64_t uintmax_t;
 typedef int64_t intmax_t;
-# 53 "/data/data/com.termux/files/usr/lib/clang/12.0.0/include/stdint.h" 2 3
+# 53 "/data/data/com.termux/files/usr/lib/clang/12.0.1/include/stdint.h" 2 3
 # 124 "/data/data/com.termux/files/usr/include/c++/v1/stdint.h" 2 3
 # 34 "/data/data/com.termux/files/usr/include/sys/types.h" 2 3 4
 
@@ -507,10 +507,10 @@ typedef uint8_t u_int8_t;
 typedef uint64_t u_int64_t;
 # 43 "/data/data/com.termux/files/usr/include/stdio.h" 2 3 4
 
-# 1 "/data/data/com.termux/files/usr/lib/clang/12.0.0/include/stdarg.h" 1 3 4
-# 14 "/data/data/com.termux/files/usr/lib/clang/12.0.0/include/stdarg.h" 3 4
+# 1 "/data/data/com.termux/files/usr/lib/clang/12.0.1/include/stdarg.h" 1 3 4
+# 14 "/data/data/com.termux/files/usr/lib/clang/12.0.1/include/stdarg.h" 3 4
 typedef __builtin_va_list va_list;
-# 32 "/data/data/com.termux/files/usr/lib/clang/12.0.0/include/stdarg.h" 3 4
+# 32 "/data/data/com.termux/files/usr/lib/clang/12.0.1/include/stdarg.h" 3 4
 typedef __builtin_va_list __gnuc_va_list;
 # 45 "/data/data/com.termux/files/usr/include/stdio.h" 2 3 4
 # 1 "/data/data/com.termux/files/usr/include/c++/v1/stddef.h" 1 3 4
@@ -1260,15 +1260,15 @@ struct sve_context {
 # 1 "/data/data/com.termux/files/usr/include/c++/v1/limits.h" 1 3 4
 # 44 "/data/data/com.termux/files/usr/include/c++/v1/limits.h" 3
 # 57 "/data/data/com.termux/files/usr/include/c++/v1/limits.h" 3
-# 1 "/data/data/com.termux/files/usr/lib/clang/12.0.0/include/limits.h" 1 3
-# 21 "/data/data/com.termux/files/usr/lib/clang/12.0.0/include/limits.h" 3
+# 1 "/data/data/com.termux/files/usr/lib/clang/12.0.1/include/limits.h" 1 3
+# 21 "/data/data/com.termux/files/usr/lib/clang/12.0.1/include/limits.h" 3
 # 1 "/data/data/com.termux/files/usr/include/limits.h" 1 3 4
 # 41 "/data/data/com.termux/files/usr/include/limits.h" 3 4
 # 1 "/data/data/com.termux/files/usr/include/c++/v1/float.h" 1 3 4
 # 77 "/data/data/com.termux/files/usr/include/c++/v1/float.h" 3
 
 
-# 1 "/data/data/com.termux/files/usr/lib/clang/12.0.0/include/float.h" 1 3
+# 1 "/data/data/com.termux/files/usr/lib/clang/12.0.1/include/float.h" 1 3
 # 80 "/data/data/com.termux/files/usr/include/c++/v1/float.h" 2 3
 # 42 "/data/data/com.termux/files/usr/include/limits.h" 2 3 4
 
@@ -1277,7 +1277,7 @@ struct sve_context {
 # 140 "/data/data/com.termux/files/usr/include/limits.h" 3 4
 # 1 "/data/data/com.termux/files/usr/include/bits/posix_limits.h" 1 3 4
 # 141 "/data/data/com.termux/files/usr/include/limits.h" 2 3 4
-# 22 "/data/data/com.termux/files/usr/lib/clang/12.0.0/include/limits.h" 2 3
+# 22 "/data/data/com.termux/files/usr/lib/clang/12.0.1/include/limits.h" 2 3
 # 58 "/data/data/com.termux/files/usr/include/c++/v1/limits.h" 2 3
 # 33 "/data/data/com.termux/files/usr/include/bits/signal_types.h" 2 3 4
 # 42 "/data/data/com.termux/files/usr/include/bits/signal_types.h" 3 4
@@ -2101,7 +2101,7 @@ class __attribute__ ((__type_visibility__("default"))) vector;
 
 
 
-# 1 "/data/data/com.termux/files/usr/lib/clang/12.0.0/include/stddef.h" 1 3
+# 1 "/data/data/com.termux/files/usr/lib/clang/12.0.1/include/stddef.h" 1 3
 # 45 "/data/data/com.termux/files/usr/include/c++/v1/cstddef" 2 3
 
 
@@ -33400,7 +33400,7 @@ call_once(once_flag& __flag, _Callable&& __func, _Args&&... __args)
 # 15 "/data/data/com.termux/files/usr/include/c++/v1/stddef.h" 3
 
 
-# 1 "/data/data/com.termux/files/usr/lib/clang/12.0.0/include/stddef.h" 1 3
+# 1 "/data/data/com.termux/files/usr/lib/clang/12.0.1/include/stddef.h" 1 3
 # 18 "/data/data/com.termux/files/usr/include/c++/v1/stddef.h" 2 3
 # 37 "/data/data/com.termux/files/usr/include/locale.h" 2 3 4
 
@@ -45039,10 +45039,11 @@ extern __attribute__ ((__visibility__("default"))) wostream wclog;
 
 } }
 # 2 "compile.cpp" 2
-
+# 1 "./tambah.cpp" 1
 int tambah(int a, int b){
-    return (a + b);
+    return (a +b);
 }
+# 3 "compile.cpp" 2
 
 int main(){
     std::cout << tambah(3, 5) << std::endl;
